@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+foot --app-id $1 --log-level none --override colors.alpha=0.95 $1

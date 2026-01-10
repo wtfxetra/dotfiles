@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+pkill fnott
+pkill waybar
+pkill pipewire
+pkill swww-daemon
+
+pipewire &
+disown
+swww-daemon &
+disown
+waybar &
+disown
+fnott &
+disown

@@ -1,0 +1,82 @@
+@import "mocha.css";
+
+
+* {
+    border: none;
+    border-radius: 0;
+    font-family: MesloLGS Nerd Font, monospace;
+    font-size: 16px;
+    min-height: 22px;
+}
+
+window#waybar {
+    background: @base;
+    color: white;
+}
+
+
+#window,
+#workspaces,
+#clock, 
+#network,
+#wireplumber,
+#battery {
+    background-color: @base;
+    color: @text;
+}
+
+tooltip {
+  background-color: @base;
+  border: 1px solid @white;
+  border-radius: 5px;
+}
+tooltip label {
+  color: white;
+}
+
+
+#workspaces button {
+    margin: 2px 0px;
+    padding: 0px 10px;
+    background: @base;
+    color: white;
+    border-radius: 15px;
+}
+
+#workspaces button.focused {
+    background: @red;
+    color: @white;
+}
+
+#custom-logo {
+    color: @red;
+    margin-left: 5px;
+}
+
+#battery {
+    margin-right: 10px;
+}
+
+#battery.charging {
+    color: @green;
+}
+
+#battery.full {
+    color: @green;
+}
+
+@keyframes blink {
+    to {
+        background-color: #ffffff;
+        color: black;
+    }
+}
+
+#battery.warning:not(.charging) {
+    color: @red;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: steps(12);
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}

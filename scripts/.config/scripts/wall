@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+dir="/home/$USER/Pictures/wallpaper"
+cd $dir
+wallpaper="none is selected" 
+set="swww img --transition-fps 60 --transition-type random --transition-bezier .3,.91,.76,.95 "
+
+selectpic(){
+    wallpaper=$(ls $dir | rofi -dmenu -p "select a wallpaper: ($wallpaper)")
+
+    if [[ $wallpaper == "q" || $wallpaper == "" ]]; then
+        exit 
+    else
+        $set $wallpaper
+    fi
+}
+
+selectpic

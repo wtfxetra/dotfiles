@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# Kill if running
+pkill waybar 2>/dev/null && exit 0
+
+# If we get here, it wasn't running, so start it
+sleep 0.1
+waybar & disown 

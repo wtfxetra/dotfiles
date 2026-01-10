@@ -1,0 +1,67 @@
+{
+    "layer": "top",
+    "modules-left": [
+	    "custom/logo",
+	    "custom/sep1",
+	    "clock"
+    ],
+
+    "modules-center": [
+	    "niri/workspaces"
+    ],
+    "modules-right": [
+	    "network",
+	    "custom/sep",
+	    "wireplumber",
+	    "custom/sep",
+	    "battery"
+    ],
+
+    "custom/logo": {
+	"format": " "
+    },
+
+    "custom/sep": {
+        "format": " | "
+    },
+    
+    "custom/sep1": {
+        "format": "|"
+    },
+
+    "network": {
+        "format-wifi": "  {essid}",
+        "format-ethernet": "{ipaddr}/{cidr} ",
+        "format-linked": "{ifname} (No IP) ",
+        "format-disconnected": "Disconnected 󰌙",
+        "format-alt": "{ifname}: {ipaddr}/{cidr}",
+        "interval": 30,
+        "on-click-right": "~/.config/scripts/tui impala",
+        "max-length": 30
+    },
+
+    "wireplumber": {
+        "format": "{icon} {volume}",
+        "format-muted": "",
+        "on-click": "~/.config/scripts/tui wiremix",
+        "format-icons": ["", "", ""]
+    },
+
+    "battery": {
+        "states": {
+            "good": 75,
+            "warning": 35,
+            "critical": 20
+        },
+        "format": "{icon} {capacity}",
+        "format-charging": " {capacity}",
+        "format-full": " {capacity}",
+        "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
+    },
+
+
+
+    "clock": {
+        "format-alt": "{:%a, %d. %b  %H:%M}"
+    }
+}
